@@ -16,6 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool airplaneMode = false;
   bool wifiMode = false;
+  bool bluetoothMode = false;
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -24,6 +25,9 @@ class _MyAppState extends State<MyApp> {
         ),
         child: SafeArea(child: Column(
           children: [
+
+
+
             Expanded(child: ListView(
               children: [
                 CupertinoListTile(
@@ -31,7 +35,7 @@ class _MyAppState extends State<MyApp> {
                   leading: Container(
                       padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(10),
                           color: CupertinoColors.systemOrange
                       ),
                       child: Icon(CupertinoIcons.airplane, color: CupertinoColors.white,)
@@ -41,48 +45,54 @@ class _MyAppState extends State<MyApp> {
                     setState(() {
                       airplaneMode = !airplaneMode;
                     });
-
                   }),
 
                 ),
 
+
                 CupertinoListTile(
-                    title: Text('WiFi '),
-                    leading: Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: CupertinoColors.systemBlue
-                        ),
-                        child: Icon(CupertinoIcons.wifi, color: CupertinoColors.white,)
+                  title: Text('WiFi'),
+                  leading: Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: CupertinoColors.systemBlue,
                     ),
-                    leadingSize: 32,
-                  trailing: CupertinoSwitch(value: wifiMode, onChanged: (value){
-                    setState(() {
-                      wifiMode= !wifiMode;
-                    });
-                  }),
+                    child: Icon(CupertinoIcons.wifi, color: CupertinoColors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => WifiPage(),
+                      ),
+                    );
+                  },
                 ),
 
 
                 CupertinoListTile(
-                    title: Text('Bluetooth'),
-                    leading: Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: CupertinoColors.systemBlue
-                        ),
-                        child: Icon(CupertinoIcons.bluetooth, color: CupertinoColors.white,)
+                  title: Text('Bluetooth'),
+                  leading: Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: CupertinoColors.systemBlue,
                     ),
-                    leadingSize: 32,
-                    additionalInfo: Text('On'),
-                    trailing: Icon(CupertinoIcons.chevron_forward, color: CupertinoColors.systemGrey2,)
-
+                    child: Icon(CupertinoIcons.bluetooth, color: CupertinoColors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => BluetoothPage(),
+                      ),
+                    );
+                  },
                 ),
 
                 CupertinoListTile(
-                    title: Text('Cellular '),
+                    title: Text('Cellular'),
                     leading: Container(
                         padding: EdgeInsets.all(5),
 
@@ -118,3 +128,4 @@ class _MyAppState extends State<MyApp> {
         )));
   }
 }
+
