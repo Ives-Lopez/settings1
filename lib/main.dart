@@ -32,6 +32,7 @@ class _MyAppState extends State<MyApp> {
               children: [
                 Image.asset('images/ivescs.jpg.jpeg'),
                 Text('Ives G. Lopez', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),),
+
                 Image.asset('images/ivan.jpg.jpeg'),
                 Text('Ivan G. Lopez', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),),
               ],
