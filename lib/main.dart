@@ -26,8 +26,6 @@ class _MyAppState extends State<MyApp> {
         child: SafeArea(child: Column(
           children: [
 
-
-
             Expanded(child: ListView(
               children: [
                 CupertinoListTile(
