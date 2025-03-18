@@ -26,6 +26,8 @@ class _MyAppState extends State<MyApp> {
         child: SafeArea(child: Column(
           children: [
 
+
+
             Expanded(child: ListView(
               children: [
                 CupertinoListTile(
@@ -46,7 +48,6 @@ class _MyAppState extends State<MyApp> {
                   }),
 
                 ),
-
 
 
                 CupertinoListTile(
@@ -70,6 +71,7 @@ class _MyAppState extends State<MyApp> {
                 ),
 
 
+
                 CupertinoListTile(
                   title: Text('Bluetooth'),
                   leading: Container(
@@ -91,7 +93,6 @@ class _MyAppState extends State<MyApp> {
                 ),
 
 
-
                 CupertinoListTile(
                     title: Text('Cellular'),
                     leading: Container(
@@ -106,7 +107,6 @@ class _MyAppState extends State<MyApp> {
                     leadingSize: 32,
                     trailing: Icon(CupertinoIcons.chevron_forward, color: CupertinoColors.systemGrey2,)
                 ),
-
 
 
 
@@ -130,6 +130,10 @@ class _MyAppState extends State<MyApp> {
         )));
   }
 }
+
+
+
+
 
 class WifiPage extends StatefulWidget {
   @override
@@ -191,6 +195,8 @@ class _WifiPageState extends State<WifiPage> {
     );
   }
 }
+
+
 
 class BluetoothPage extends StatefulWidget {
   @override
