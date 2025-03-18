@@ -25,7 +25,15 @@ class _MyAppState extends State<MyApp> {
         ),
         child: SafeArea(child: Column(
           children: [
-
+            SizedBox(height: 100,),
+            Column(
+              children: [
+                Image.asset('images/ives.jpg', scale: 5,),
+                Text('Ives G. Lopez', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),),
+                Image.asset('images/ivan.jpg', scale: 5,),
+                Text('Ivan G. Lopez', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),),
+              ],
+            ),
 
 
             Expanded(child: ListView(
