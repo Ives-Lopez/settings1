@@ -23,9 +23,19 @@ class _MyAppState extends State<MyApp> {
         navigationBar: CupertinoNavigationBar(
           middle: Text('Settings', style: TextStyle(fontWeight: FontWeight.bold),),
         ),
+
+
         child: SafeArea(child: Column(
           children: [
-
+            SizedBox(height: 100,),
+            Column(
+              children: [
+                Image.asset('images/ivescs.jpg.jpeg'),
+                Text('Ives G. Lopez', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),),
+                Image.asset('images/ivan.jpg.jpeg'),
+                Text('Ivan G. Lopez', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),),
+              ],
+            ),
 
 
             Expanded(child: ListView(
