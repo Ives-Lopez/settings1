@@ -71,6 +71,7 @@ class _MyAppState extends State<MyApp> {
                 ),
 
 
+
                 CupertinoListTile(
                   title: Text('Bluetooth'),
                   leading: Container(
@@ -91,6 +92,7 @@ class _MyAppState extends State<MyApp> {
                   },
                 ),
 
+
                 CupertinoListTile(
                     title: Text('Cellular'),
                     leading: Container(
@@ -107,6 +109,7 @@ class _MyAppState extends State<MyApp> {
                 ),
 
 
+
                 CupertinoListTile(
                     title: Text('Personal Hotspot'),
                     leading: Container(
@@ -121,7 +124,6 @@ class _MyAppState extends State<MyApp> {
                     additionalInfo: Text('Off'),
                     trailing: Icon(CupertinoIcons.chevron_forward, color: CupertinoColors.systemGrey2,)
                 ),
-
               ],
             ))
           ],
