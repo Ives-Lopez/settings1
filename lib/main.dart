@@ -48,6 +48,7 @@ class _MyAppState extends State<MyApp> {
                 ),
 
 
+
                 CupertinoListTile(
                   title: Text('WiFi'),
                   leading: Container(
@@ -67,7 +68,6 @@ class _MyAppState extends State<MyApp> {
                     );
                   },
                 ),
-
 
 
                 CupertinoListTile(
@@ -91,6 +91,7 @@ class _MyAppState extends State<MyApp> {
                 ),
 
 
+
                 CupertinoListTile(
                     title: Text('Cellular'),
                     leading: Container(
@@ -105,6 +106,7 @@ class _MyAppState extends State<MyApp> {
                     leadingSize: 32,
                     trailing: Icon(CupertinoIcons.chevron_forward, color: CupertinoColors.systemGrey2,)
                 ),
+
 
 
 
