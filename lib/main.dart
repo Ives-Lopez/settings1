@@ -131,3 +131,121 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+class WifiPage extends StatefulWidget {
+  @override
+  _WifiPageState createState() => _WifiPageState();
+}
+
+class _WifiPageState extends State<WifiPage> {
+  bool wifiMode = false; // State for WiFi mode
+  final List<String> wifiNetworks = [
+    "SMS Free Wifi",
+    "ARDUINO WiFi",
+    "Samsung Free Internet",
+    "HCC Free WiFi",
+  ];
+
+  void _toggleWifiMode(bool value) {
+    setState(() {
+      wifiMode = value; // Update the wifiMode state
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('WiFi Settings'),
+        previousPageTitle: 'Back',
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            CupertinoListTile(
+              title: Text('WiFi'),
+              trailing: CupertinoSwitch(
+                value: wifiMode,
+                onChanged: _toggleWifiMode, // Toggle WiFi mode
+              ),
+            ),
+            if (wifiMode)
+              Expanded(
+                child: ListView(
+                  children: wifiNetworks
+                      .map((network) => CupertinoListTile(
+                    title: Text(network),
+                    leading: Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Icon(CupertinoIcons.wifi, color: CupertinoColors.systemGrey,),
+                    ),
+                  ))
+                      .toList(),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class BluetoothPage extends StatefulWidget {
+  @override
+  _BluetoothPageState createState() => _BluetoothPageState();
+}
+
+class _BluetoothPageState extends State<BluetoothPage> {
+  bool bluetoothMode = false; // State for Bluetooth mode
+  final List<String> bluetoothDevices = [
+    "Itel RS4",
+    "Galaxy A10s",
+    "Laptop-GLJDCK",
+    "SoundboxM80",
+  ];
+
+  void _toggleBluetoothMode(bool value) {
+    setState(() {
+      bluetoothMode = value; // Update the bluetoothMode state
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('Bluetooth Settings'),
+        previousPageTitle: 'Back',
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            CupertinoListTile(
+              title: Text('Bluetooth'),
+              trailing: CupertinoSwitch(
+                value: bluetoothMode,
+                onChanged: _toggleBluetoothMode, // Toggle Bluetooth mode
+              ),
+            ),
+            if (bluetoothMode)
+              Expanded(
+                child: ListView(
+                  children: bluetoothDevices
+                      .map((device) => CupertinoListTile(
+                    title: Text(device),
+                    leading: Container(
+
+                      child: Icon(CupertinoIcons.bluetooth, color: CupertinoColors.systemGrey,),
+                    ),
+                  ))
+                      .toList(),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
